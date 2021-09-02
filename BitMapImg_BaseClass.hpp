@@ -1,30 +1,30 @@
 /* ***************************************************************************
  functions in this (BitMapImg_BaseClass.hpp) hpp file:
  
- (-) BitMapImg(void);
+ (1) BitMapImg(void);
  * just designed for derived class(es).
  
- (-) BitMapImg(bmpData org_bmp_data);
+ (2) BitMapImg(bmpData org_bmp_data);
  * (inline)
  * call <StandardizeBMP>
  
- (-) ~BitMapImg(void);
+ (3) ~BitMapImg(void);
  * (inline)
  * delete [] bitmap_array.
  
- (-) bmpData BitMapImg::TransToBmp(void);
+ (4) bmpData BitMapImg::TransToBmp(void);
  * Write data of this class into a bmpData for output.
  * Always output 24-bit form or 8-bit form.
  
- (-) long getWidth(void) {return width;}
+ (5) long getWidth(void) {return width;}
  
- (-) long getHeight(void) {return height;}
+ (6) long getHeight(void) {return height;}
  
- (-) bool GetGrayForm(void) {return is_gray_form;}
+ (7) bool GetGrayForm(void) {return is_gray_form;}
  
- (-) unsigned char* MoveBitmapDataTo(unsigned char* target);
+ (8) unsigned char* MoveBitmapDataTo(unsigned char* target);
  
- (-) void StandardizeBMP(bmpData org_bmp_data)
+ (9) void StandardizeBMP(bmpData org_bmp_data)
  !!!!!!!!!!!!!! CAN NOT processing 16-bit BMP !!!!!!!!!!!!!!
  * Transfer all other kinds of BMP data to 24-bit (B:1byte, G:1byte, R:1byte).
  * Can processing Height < 0, and change it to Height > 0.
