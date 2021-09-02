@@ -1,19 +1,19 @@
 /* ***************************************************************************
  functions in this (ColorTrans_Class.hpp) hpp file:
 
- (-) GeometryTrans(bmpData org_bmp_img) : BitMapImg(org_bmp_img);
+ (1) GeometryTrans(bmpData org_bmp_img) : BitMapImg(org_bmp_img);
  
- (-) GeometryTrans(BitMapImg &org);
+ (2) GeometryTrans(BitMapImg &org);
  * copy from a BitMapImg object.
  
- (-) (inline) void Zoom(long out_width, long out_height, int select_algorithm = 1);
+ (3) (inline) void Zoom(long out_width, long out_height, int select_algorithm = 1);
     1-> void Zoom_Neighbor(long out_width, long out_height);
     2-> void Zoom_DoubleLinear(long out_width, long out_height);
     3-> void Zoom_Convolution(long out_width, long out_height);
  * Zoom the image to a given size.
  * 1 is the fastest, 3 is the clearest.
  
- (-) (inline) void Rotate(double degree, int select_algorithm = 1, unsigned char color_default = 255, bool cut = 0);
+ (4) (inline) void Rotate(double degree, int select_algorithm = 1, unsigned char color_default = 255, bool cut = 0);
     1-> void Rotate_90(void);
     2-> void Rotate_180(void);
     3-> void Rotate_270(void);
@@ -30,12 +30,12 @@
  * u = x'cos() - y'sin() - c cos() + d cos() + a;
  * v = x'sin() + y'cos() - c sin() - d cos() + b;
  
- (-) unsigned char Interpolation_DoubleLinear_core(unsigned char around[2][2], double x_pos, double y_pos);
+ (5) unsigned char Interpolation_DoubleLinear_core(unsigned char around[2][2], double x_pos, double y_pos);
  * Chinese name (utf-8): 双线性插值法
  * For single pixel.
  * Average of the surrounding 4 pixels.
  
- (-) unsigned char Interpolation_Convolution_core(unsigned char around[4][4], double x_pos, double y_pos);
+ (6) unsigned char Interpolation_Convolution_core(unsigned char around[4][4], double x_pos, double y_pos);
  * Chinese name (utf-8): 立方卷积插值法（矩阵乘法）
  * (For single pixel.)
  * g(x, y) = f(u, v) = ABC
