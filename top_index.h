@@ -15,6 +15,8 @@
 #include "struct_bmpFileStructure.h"
 
 //function(s):
+#define MAX(a,b) ((a)>(b)?(a):(b))
+#define MIN(a,b) ((a)<(b)?(a):(b))
 bool get_system_endian (void);  //basic_SetUp.cpp
 void initial (void);    //basic_SetUp.cpp
 bmpData ReadBmp (char* bmp_file_path);  //basic_bmp_io.cpp
